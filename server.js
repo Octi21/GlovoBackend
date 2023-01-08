@@ -1,12 +1,15 @@
-const express = require('express')
-// const expressGraphQL = require('express-graphql')
-// const { assertWrappingType } = require('graphql')
+const express = require('express');
+const JWTMiddleware = require('./middlewares/JWTMiddleware');
+const { graphqlHTTP } = require('express-graphql');
+const app = express();
 
-const app = express()
+const schema = require('./graphql');
 
+app.use(express.json());
 
-// assertWrappingType.use('/graphql',expressGraphQL({
-//   qraphiql:true
-// }))
+app.post('/graphql', JWTMiddleware, graphqlHTTP({
+  graphiql: true,
+  schema: schema,
+}));
 
-app.listen(3001,()=> console.log('server running'))
+app.listen(3001, () => console.log("server running"));

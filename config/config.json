@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "db_a92cb4_octavian1234_admin",
+    "password": "J22mWu2ckwNjp6Y",
+    "database": "db_a92cb4_octavian1234",
+    "host": "SQL5053.site4now.net",
+    "dialect": "mssql"
+  }
+}
