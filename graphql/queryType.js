@@ -3,12 +3,13 @@ const {
 } = require('graphql');
 
 const usersQuery = require('./queries/usersQuery');
-
+const adressesQuery = require('./queries/adressesQuery')
 
 const queryType = new GraphQLObjectType({
   name: 'Query',
   fields: {
-    users: usersQuery
+    users: usersQuery,
+    addresses: adressesQuery
   }
 });
 

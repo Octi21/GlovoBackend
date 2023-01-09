@@ -8,7 +8,7 @@ const schema = require('./graphql');
 app.use(express.json());
 
 app.post('/graphql', JWTMiddleware, graphqlHTTP({
-  graphiql: true,
+  // graphiql: true,
   schema: schema,
 }));
 

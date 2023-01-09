@@ -5,16 +5,19 @@ const {
 } = require('graphql');
 
 
-const studentType = new GraphQLObjectType({
-  name: 'User',
+const addressType = new GraphQLObjectType({
+  name: 'Address',
   fields: {
       id: {
           type: GraphQLID,
       },
-      username: {
+      city: {
           type: GraphQLString,
       },
+      street: {
+        type: GraphQLString,
+    },
   }
 });
 
-module.exports = studentType;
+module.exports = addressType;

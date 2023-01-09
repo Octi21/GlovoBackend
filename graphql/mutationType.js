@@ -4,10 +4,14 @@ const {
 
 const loginMutation = require('./mutations/loginMutation');
 
+const createUserMutation = require('./mutations/createUserMutation')
+
 const mutationType = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
-      login: loginMutation,
+    createUser: createUserMutation,
+
+    login: loginMutation
   }
 });
 
