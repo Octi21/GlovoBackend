@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 const JWT_SECRET = "392980c66ecb9dc4e599a5314446ae44";
 
-module.exports = async (source, args) => {
+module.exports = async (_, args) => {
   const {
     username,
     password

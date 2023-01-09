@@ -11,15 +11,20 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
-      {
-        city: 'Bucuresti',
-        street: 'Bd. Unirii',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
     ]);
 
-    
+    const users = await models.User.findAll();
+    const addresses = await models.Address.findAll();
+
+    for(let i = 0; i < users.length; i++) {
+      const addressId = addresses[Math.floor(Math.random() * addresses.length)].id;
+      await queryInterface.bulkUpdate('Users', {
+        addressId: addressId,
+      }, {
+        id: users[i].id,
+      });
+    }
+  
   },
 
   async down (queryInterface, Sequelize) {
