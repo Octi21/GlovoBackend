@@ -4,7 +4,7 @@ module.exports = async (source, {username,  password}, { tokenPayload }) => {
     return null;
   }
 
-  const user = await models.Student.create({
+  const user = await models.User.create({
     username,
     password
   });
